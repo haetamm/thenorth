@@ -6,6 +6,7 @@ import { fieldTable } from "../../../utils/fields";
 import Loader from "../layout/Loader";
 import SearchComp from "./SearchComp";
 import ButtonActivation from "./ButtonActivation";
+import CardUserComp from "./CardUserComp";
 
 const TableUserComp = () => {
   const { users, loading, currentPage, totalPages, setCurrentPage } =
@@ -13,14 +14,14 @@ const TableUserComp = () => {
 
   return (
     <>
-      <div className="mx-auto w-full px-3 md:px-6 mb-20 ">
+      <div className="mx-auto w-full px-3 md:px-6 mb-20 xs:mb-0">
         <section className=" text-gray-800">
           <SearchComp />
 
-          <div className="block  shadow-lg bg-white">
+          <div className="block  xs:shadow-lg bg-white">
             <div className="flex flex-col">
-              <div className="overflow-x-auto sm:-mx-6 lg:-mx-8">
-                <div className="inline-block w-full sm:px-6 lg:px-8">
+              <div className="hidden xs:block overflow-x-auto">
+                <div className="inline-block w-full ">
                   <div className="h-[calc(100vh-290px)] xs:h-[calc(100vh-190px)] overflow-auto">
                     <table className="w-full mb-0 overflow-auto mx-auto">
                       <thead className="border-b text-left w-full bg-white sticky top-0 z-10 shadow-md">
@@ -120,6 +121,7 @@ const TableUserComp = () => {
                   </div>
                 </div>
               </div>
+              <CardUserComp />
               <div className=" py-3 bg-transparent border-t">
                 <Pagination
                   currentPage={currentPage}

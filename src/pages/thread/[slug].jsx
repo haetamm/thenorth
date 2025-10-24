@@ -48,12 +48,12 @@ const DetailPage = () => {
       <div
         className={`${
           !token ? "mt-6" : "mt-6 md:mt-[-30px]"
-        } flex w-full justify-center gap-0 px-3 md:px-0`}
+        } flex w-full justify-center gap-0 md:px-0`}
       >
         <SideBarUser />
 
-        <div className="bg-slate-200 flex w-full min-h-screen max-w-full flex-col mx-auto pb-16">
-          <main className="pt-8 md:pt-0 pb-16 lg:pb-24 bg-slate-200">
+        <div className=" px-4 flex w-full min-h-screen max-w-full flex-col mx-auto pb-16">
+          <main className="pt-8 md:pt-0 pb-16 lg:pb-24">
             <ArticleDetail
               scrollToSection={scrollToSection}
               targetRef={targetRef}
@@ -71,26 +71,5 @@ const DetailPage = () => {
   );
 };
 
-// export const getServerSideProps = async ({ params }) => {
-//   try {
-//     const slug = params.slug;
-//     const response = await endpoint.get(`threads/detail/${slug}`);
-//     const data = response.data.thread;
-
-//     return {
-//       props: {
-//         data,
-//       },
-//     };
-//   } catch (error) {
-//     console.error('Error fetching data:', error);
-
-//     return {
-//       props: {
-//         data: null,
-//       },
-//     };
-//   }
-// };
 
 export default DetailPage;

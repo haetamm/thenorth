@@ -1,17 +1,17 @@
-import { AiOutlineCompass, AiOutlineFileSearch } from "react-icons/ai";
+import { AiOutlineFileSearch } from "react-icons/ai";
 import { MdOutlineAdminPanelSettings } from "react-icons/md";
 import { HiOutlinePuzzle } from "react-icons/hi";
-import { BsCodeSlash } from "react-icons/bs";
 import { FaGithub, FaHome } from "react-icons/fa";
 import { MdNotStarted, MdOutlineDashboardCustomize } from "react-icons/md";
 import { CgProfile } from "react-icons/cg";
-import { IoMdLogOut, IoMdNotifications } from "react-icons/io";
+import { IoMdLogOut } from "react-icons/io";
 import { RiBook2Fill } from "react-icons/ri";
+import { IoHomeOutline } from "react-icons/io5";
 
 export const images = [
-  `http://fakeimg.pl/2000x700/84D2C5/080202/?text=Pasang Iklan?`,
-  "http://fakeimg.pl/2000x700/E4C988/080202/?text=Hubungi",
-  "http://fakeimg.pl/2000x700/C27664/080202/?text=082260283200",
+  `https://dummyimage.com/2000x700/84D2C5/080202.png&text=Pasang+Iklan%3F`,
+  `https://dummyimage.com/2000x700/E4C988/080202.png&text=Hubungi`,
+  `https://dummyimage.com/2000x700/C27664/080202.png&text=(021) 3849065`,
 ];
 
 export const linksInGuest = [
@@ -57,10 +57,9 @@ export const footerLinks = [
 ];
 
 export const navLinks = [
-  { href: "/home", icon: MdOutlineDashboardCustomize, label: "Home" },
+  { href: "/home", icon: IoHomeOutline, label: "Home" },
+  { href: "#", icon: MdOutlineDashboardCustomize, label: "Categories" },
   { href: "#", icon: HiOutlinePuzzle, label: "About" },
-  { href: "#", icon: AiOutlineCompass, label: "Performance" },
-  { href: "#", icon: BsCodeSlash, label: "Deliverables" },
 ];
 
 export const authLinks = [
@@ -71,8 +70,20 @@ export const authLinks = [
 export const menuItems = [
   {
     label: "Home",
-    icon: <MdOutlineDashboardCustomize size={24} />,
+    icon: <FaHome size={24} />,
     link: "/home",
+    visible: true,
+  },
+  {
+    label: "Categories",
+    icon: <MdOutlineDashboardCustomize size={24} />,
+    link: "#",
+    visible: true,
+  },
+  {
+    label: "About",
+    icon: <HiOutlinePuzzle size={24} />,
+    link: "#",
     visible: true,
   },
   {
@@ -80,24 +91,6 @@ export const menuItems = [
     icon: <MdOutlineAdminPanelSettings size={24} />,
     link: "/admin",
     visible: (token, role) => token && role === "ADMIN",
-  },
-  {
-    label: "Products",
-    icon: <HiOutlinePuzzle size={24} />,
-    link: "#",
-    visible: true,
-  },
-  {
-    label: "Performance",
-    icon: <AiOutlineCompass size={24} />,
-    link: "#",
-    visible: true,
-  },
-  {
-    label: "Deliverables",
-    icon: <BsCodeSlash size={24} />,
-    link: "#",
-    visible: true,
   },
 ];
 
@@ -129,16 +122,9 @@ export const sidebarItems = [
     isActive: (pathname) => pathname === "/home",
   },
   {
-    href: "/",
+    href: "#",
     label: "Explore",
     icon: AiOutlineFileSearch,
-    isActive: () => false,
-  },
-  {
-    href: "#",
-    label: "Notifications",
-    icon: IoMdNotifications,
-    isDisabled: true,
     isActive: () => false,
   },
   {

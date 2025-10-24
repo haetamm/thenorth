@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
-import { isActive } from "../../../utils/helper";
+import { activeLink, isActive } from "../../../utils/helper";
 
 const NavThreadPage = () => {
   const { pathname } = useRouter();
@@ -24,7 +24,7 @@ const NavThreadPage = () => {
         <Link key={index} href={href}>
           <div
             className={`${
-              isActive(pathname, href) ? classActive : ""
+              activeLink(pathname, href) ? classActive : ""
             } flex justify-center py-4`}
           >
             {label}

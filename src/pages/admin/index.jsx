@@ -35,12 +35,12 @@ const Admin = () => {
 
   return (
     <Layout siteTitle={siteTitle} siteDescription={siteDescription}>
-      <div className={`flex w-full gap-0 md:mt-[-58px]`}>
+      <div className={`flex w-full gap-0 md:mt-[-40px]`}>
         <SideBarUser />
 
-        <div className="bg-white lg:bg-slate-200 flex w-full flex-col mx-auto ">
+        <div className=" flex w-full flex-col mx-auto ">
           {role === "ADMIN" ? (
-            <section className="bg-white lg:bg-slate-200 py-6 sm:py-4 lg:py-0">
+            <section className="bg-white md:bg-transparent py-6 sm:py-4 lg:py-0">
               <h2 className="my-3 xs:my-0 md:my-1 lg:my-3 text-center text-2xl font-bold text-gray-800 md:mb-3 lg:text-3xl">
                 Administrator
               </h2>

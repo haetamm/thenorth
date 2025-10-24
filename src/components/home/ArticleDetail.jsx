@@ -36,7 +36,7 @@ const ArticleDetail = ({ scrollToSection, targetRef }) => {
   return (
     <>
       {thread ? (
-        <article className="mx-auto w-full max-w-2xl format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
+        <article className="mx-auto w-full max-w-2xl  format format-sm sm:format-base lg:format-lg format-blue dark:format-invert">
           <header className="mb-4 lg:mb-6 not-format">
             <address className="flex items-center justify-between mb-6 not-italic">
               <div className="inline-flex items-center mr-3 text-sm text-gray-900 dark:text-white">
@@ -138,9 +138,11 @@ const ArticleDetail = ({ scrollToSection, targetRef }) => {
               priority
             />
           </div>
-          <div className="whitespace-pre-wrap break-words">
+          
+          <div className="wysiwyg-content">
             {thread ? ReactHtmlParser(thread.body || "-") : "-"}
           </div>
+
           <div ref={targetRef}>
             <FormCommentComp threadId={thread.id} />
           </div>

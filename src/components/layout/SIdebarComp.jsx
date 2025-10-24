@@ -3,8 +3,6 @@ import Link from "next/link";
 import { useRouter } from "next/router";
 import { GiWorld } from "react-icons/gi";
 import { AiOutlineClose } from "react-icons/ai";
-import { TiMessages } from "react-icons/ti";
-import { IoIosNotificationsOutline } from "react-icons/io";
 import useUserStore from "@/store/user";
 import { isActive } from "../../../utils/helper";
 import { useSidebar } from "@/store/sidebar";
@@ -92,13 +90,6 @@ const SidebarComp = () => {
                           {username}
                         </p>
                       </Link>
-                      <div className="flex space-x-3">
-                        <TiMessages size={24} className="text-gray-800" />
-                        <IoIosNotificationsOutline
-                          size={24}
-                          className="text-gray-800"
-                        />
-                      </div>
                     </div>
                   </div>
                 )}

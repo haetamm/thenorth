@@ -22,7 +22,7 @@ const SideBarUser = () => {
     <>
       {token && (
         <div className="flex w-0 shrink-0 transition-opacity duration-200 xs:w-20 md:w-24 lg:max-w-none xl:-mr-0 xl:w-full xl:max-w-[18rem] 2xl:justify-end">
-          <div className="fixed bottom-0 z-10 flex w-full flex-col justify-between bg-main-background py-0 xs:top-0 xs:h-full xs:w-auto xs:border-0 bg-black xs:px-2 xs:py-3 xs:pt-2 md:px-4 xl:w-72">
+          <div className="fixed bottom-0 z-10 flex w-full flex-col justify-between bg-slate-800/90 backdrop-blur-sm border-r border-slate-700 py-0 xs:top-0 xs:h-full xs:w-auto xs:border-0 xs:px-2 xs:py-3 xs:pt-2 md:px-4 xl:w-72">
             <div className="flex flex-col mt-0 xs:mt-10 md:mt-5 justify-center gap-2 xs:items-center xl:items-stretch">
               <div className="flex items-center justify-around xs:flex-col xs:justify-center xl:block">
                 {sidebarItems.map(({ href, label, icon: Icon, isDisabled }) => (
@@ -35,8 +35,8 @@ const SideBarUser = () => {
                       <div
                         className={`custom-button flex items-center justify-center gap-4 self-start p-2 text-xl ${
                           isActive(pathname, href)
-                            ? "text-indigo-700"
-                            : "text-white"
+                            ? "text-cyan-400"
+                            : "text-slate-300"
                         } xs:p-3 xl:pr-5`}
                       >
                         <Icon className="h-7 w-7" />
@@ -51,7 +51,7 @@ const SideBarUser = () => {
                 <a
                   className={`${
                     isActive(pathname, "/create") ? "hidden md:block" : ""
-                  } cursor-pointer custom-button main-tab accent-tab absolute right-4 -translate-y-[72px] bg-main-accent text-lg font-bold text-white outline-none transition hover:brightness-90 active:brightness-75 xs:static xs:translate-y-0 bg-blue-700 hover:text-red-700 rounded-full p-2 xl:w-11/12`}
+                  } cursor-pointer custom-button main-tab accent-tab absolute right-4 -translate-y-[72px] bg-cyan-500 text-lg font-bold text-white outline-none transition hover:bg-cyan-600 active:bg-cyan-700 xs:static xs:translate-y-0 rounded-full p-2 xl:w-11/12`}
                 >
                   <IoMdCreate className="h-6 w-6 xl:hidden" />
                   <p className="hidden xl:block text-center">Create</p>

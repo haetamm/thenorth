@@ -27,7 +27,7 @@ const Index = ({ children, siteTitle, siteDescription, guestToken }) => {
           </div>
         </div>
       )}
-      <div className="bg-slate-200 min-h-screen flex flex-col">
+      <div className="bg-gradient-to-br from-slate-50 to-gray-100 min-h-screen flex flex-col">
         <ToastContainer
           position="top-center"
           autoClose={5000}

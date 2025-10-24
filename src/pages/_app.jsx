@@ -1,4 +1,5 @@
 import "@/styles/globals.css";
+import "@/styles/article-style.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import "../../utils/diffForHumans";

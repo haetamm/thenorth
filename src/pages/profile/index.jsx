@@ -12,18 +12,16 @@ const ProfilePage = () => {
 
   return (
     <Layout siteTitle={siteTitle} siteDescription={siteDescription}>
-      <div className="flex w-full justify-center gap-0 h-screen md:mt-[-30px]">
+      <div className="flex w-full md:-mt-[40px] min-h-[calc(100vh-56px)] py-8 md:py-0 pb-24 xs:pb-0 justify-center gap-0 ">
         <SideBarUser />
 
-        <div className="bg-slate-200 flex min-h-screen w-full max-w-full flex-col mx-auto pb-[18rem]">
-          <section className="bg-slate-200 py-4 md:py-0">
+        <div className="flex w-full max-w-full flex-col mx-auto">
             <div className="mx-auto max-w-screen-xl px-2 md:px-8">
-              <div className="mb-5 md:mb-10 mt-6 md:mt-1">
                 <div className="mx-auto">
-                  <div className="min-h-screen p-0 xs:p-6 bg-gray-100 flex justify-center">
+                  <div className=" p-0 xs:px-6 flex justify-center">
                     <div className="xs:container max-w-screen-lg mx-auto">
                       <h2 className="font-semibold text-xl text-gray-600">
-                        The North
+                        My Profile
                       </h2>
                       <p className="text-gray-500 mb-6">
                         Stay fit, All day, every day.
@@ -33,9 +31,7 @@ const ProfilePage = () => {
                     </div>
                   </div>
                 </div>
-              </div>
             </div>
-          </section>
         </div>
       </div>
     </Layout>

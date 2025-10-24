@@ -5,7 +5,7 @@ import useUserStore from "@/store/user";
 import SideBarUser from "../../components/layout/SideBarUser";
 import useThreadStore from "@/store/thread";
 import ArticleComp from "@/components/home/ArticleComp";
-import Loader from "@/components/layout/Loader";
+import ArticleSkeleton from "@/components/layout/ArticleSkeleton";
 import Pagination from "@/components/layout/Pagination";
 
 const HomePage = () => {
@@ -29,76 +29,52 @@ const HomePage = () => {
 
   return (
     <Layout siteTitle="Home | The North" siteDescription="Some description">
-      <div
-        className={`${
-          !token ? "mt-6" : "mt-6 md:mt-[-30px]"
-        } flex w-full justify-center gap-0`}
-      >
+      <div className="flex w-full justify-center">
         <SideBarUser />
-        <div className="bg-slate-200 rounded-none hover-animation flex h-full w-full max-w-full flex-col mx-auto pb-24">
-          <section className="bg-slate-200">
-            <div className="mx-auto max-w-screen-xl min-h-[calc(100vh-160px)] px-4 md:px-8">
-              <div className="mb-6 md:mb-10">
-                <h2 className="mb-4 text-center text-2xl font-bold text-gray-800 md:mb-6 lg:text-3xl">
-                  Most Recent Posts
-                </h2>
+        <div className="flex-1 bg-gray-50 min-h-screen pb-24 xs:pb-8">
+          <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${token ? 'py-8 md:py-0 md:-mt-[27px]' : 'py-8'}`}>
+            <div className="text-center mb-12">
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                Latest Posts
+              </h1>
+              <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+                Temukan diskusi terbaru dan bagikan pemikiranmu
+              </p>
+            </div>
+            
+            {loading ? (
+              <ArticleSkeleton />
+            ) : (
+              <>
+                {threads && threads.length > 0 ? (
+                  <ArticleComp threads={threads} />
+                ) : (
+                  <div className="text-center py-16">
+                    <div className="text-gray-500 text-lg mb-4">
+                      Belum ada post
+                    </div>
+                    <p className="text-gray-400">
+                      Jadilah yang pertama memulai diskusi!
+                    </p>
+                  </div>
+                )}
+              </>
+            )}
+            
+            {threads && threads.length > 0 && !loading && (
+              <div className="mt-12 flex justify-center">
+                <Pagination
+                  currentPage={currentPage}
+                  totalPages={totalPages}
+                  setCurrentPage={setCurrentPage}
+                />
               </div>
-              {loading ? (
-                <div className="w-full mt-10">
-                  <Loader />
-                </div>
-              ) : (
-                <div
-                  className={`${
-                    !token ? "xl:grid-cols-3" : ""
-                  } grid gap-8 xs:grid-cols-2 xs:gap-16 xl:gap-16`}
-                >
-                  {threads && threads.length > 0 ? (
-                    <ArticleComp threads={threads} />
-                  ) : (
-                    <p>No data available</p>
-                  )}
-                </div>
-              )}
-            </div>
-            <div className="mt-10">
-              <Pagination
-                currentPage={currentPage}
-                totalPages={totalPages}
-                setCurrentPage={setCurrentPage}
-              />
-            </div>
-          </section>
+            )}
+          </div>
         </div>
       </div>
     </Layout>
   );
 };
-
-//  metode server side rendering
-// export const getServerSideProps = async ({ query }) => {
-//   try {
-//     const page = query.page || 1;
-//     const response = await endpoint.get(`threads?page=${page}`);
-//     const data = response.data.threads.threads;
-//     const totalPages = response.data.threads.totalPages;
-
-//     return {
-//       props: {
-//         data,
-//         totalPages,
-//       },
-//     };
-//   } catch (error) {
-//     console.error('Error fetching data:', error);
-
-//     return {
-//       props: {
-//         data: [],
-//         totalPages: 1,
-//       },
-//     };
-//   }
-// };
 
 export default HomePage;
