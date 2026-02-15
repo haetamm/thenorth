@@ -16,22 +16,22 @@ const ProfilePage = () => {
         <SideBarUser />
 
         <div className="flex w-full max-w-full flex-col mx-auto">
-            <div className="mx-auto max-w-screen-xl px-2 md:px-8">
-                <div className="mx-auto">
-                  <div className=" p-0 xs:px-6 flex justify-center">
-                    <div className="xs:container max-w-screen-lg mx-auto">
-                      <h2 className="font-semibold text-xl text-gray-600">
-                        My Profile
-                      </h2>
-                      <p className="text-gray-500 mb-6">
-                        Stay fit, All day, every day.
-                      </p>
+          <div className="mx-auto max-w-screen-xl px-2 md:px-8">
+            <div className="mx-auto">
+              <div className=" p-0 xs:px-6 flex justify-center">
+                <div className="xs:container max-w-screen-lg mx-auto">
+                  <h2 className="font-semibold text-xl text-gray-600">
+                    My Profile
+                  </h2>
+                  <p className="text-gray-500 mb-6">
+                    Stay fit, All day, every day.
+                  </p>
 
-                      <FormProfile />
-                    </div>
-                  </div>
+                  <FormProfile />
                 </div>
+              </div>
             </div>
+          </div>
         </div>
       </div>
     </Layout>

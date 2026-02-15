@@ -42,10 +42,10 @@ const Modal = () => {
               {type === "logout"
                 ? "Logout"
                 : type === "activateUser"
-                ? "Activated"
-                : type === "deactivateUser"
-                ? "Deactivated"
-                : "Delete"}
+                  ? "Activated"
+                  : type === "deactivateUser"
+                    ? "Deactivated"
+                    : "Delete"}
             </h3>
             <p className="py-4">
               {type === "logout"
@@ -69,8 +69,8 @@ const Modal = () => {
                   {type === "activateUser"
                     ? "Activated"
                     : type === "deactivateUser"
-                    ? "Deactivated"
-                    : "Yes"}
+                      ? "Deactivated"
+                      : "Yes"}
                 </button>
               </div>
             </div>

@@ -35,7 +35,7 @@ const useAdminStore = create((set) => ({
         users: state.users.map((user) =>
           user.id === id
             ? { ...user, deleted_at: new Date().toLocaleString() }
-            : user
+            : user,
         ),
       }));
     } catch (error) {
@@ -51,7 +51,7 @@ const useAdminStore = create((set) => ({
       await axiosInstance.post(`users/${username}/active`);
       set((state) => ({
         users: state.users.map((user) =>
-          user.username === username ? { ...user, deleted_at: null } : user
+          user.username === username ? { ...user, deleted_at: null } : user,
         ),
       }));
     } catch (error) {

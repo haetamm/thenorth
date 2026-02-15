@@ -138,7 +138,7 @@ const ArticleDetail = ({ scrollToSection, targetRef }) => {
               priority
             />
           </div>
-          
+
           <div className="wysiwyg-content">
             {thread ? ReactHtmlParser(thread.body || "-") : "-"}
           </div>

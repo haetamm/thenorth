@@ -32,7 +32,9 @@ const HomePage = () => {
       <div className="flex w-full justify-center">
         <SideBarUser />
         <div className="flex-1 bg-gray-50 min-h-screen pb-24 xs:pb-8">
-          <div className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${token ? 'py-8 md:py-0 md:-mt-[27px]' : 'py-8'}`}>
+          <div
+            className={`max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ${token ? "py-8 md:py-0 md:-mt-[27px]" : "py-8"}`}
+          >
             <div className="text-center mb-12">
               <h1 className="text-4xl font-bold text-gray-900 mb-4">
                 Latest Posts
@@ -41,7 +43,7 @@ const HomePage = () => {
                 Temukan diskusi terbaru dan bagikan pemikiranmu
               </p>
             </div>
-            
+
             {loading ? (
               <ArticleSkeleton />
             ) : (
@@ -60,7 +62,7 @@ const HomePage = () => {
                 )}
               </>
             )}
-            
+
             {threads && threads.length > 0 && !loading && (
               <div className="mt-12 flex justify-center">
                 <Pagination

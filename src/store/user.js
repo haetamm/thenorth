@@ -6,12 +6,11 @@ import { handleFormErrors } from "../../utils/errorHandling";
 import { toast } from "react-toastify";
 
 const token = Cookies.get("token");
-let decodeToken = {};
 let role = "";
 
 if (token) {
   try {
-    decodeToken = jwtDecode(token);
+    const decodeToken = jwtDecode(token);
     const roles = decodeToken ? decodeToken.user.roles : "";
     role = roles[0];
   } catch (e) {

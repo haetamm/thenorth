@@ -38,14 +38,16 @@ const MyThreadPage = () => {
           <div className="mb-6">
             <NavThreadPage />
           </div>
-          
+
           <div className="bg-white shadow-sm border border-gray-200 rounded-xl p-6">
             <div className="mb-8 text-center border-b border-gray-100 pb-6">
               <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 flex items-center justify-center gap-3">
                 <FaFileAlt className="text-red-500" />
                 My Threads
               </h1>
-              <p className="text-gray-600 text-sm md:text-base">Kelola thread yang sudah kamu buat</p>
+              <p className="text-gray-600 text-sm md:text-base">
+                Kelola thread yang sudah kamu buat
+              </p>
             </div>
 
             <div className="w-full">
@@ -66,8 +68,8 @@ const MyThreadPage = () => {
                       <p className="text-gray-500 mb-6 text-sm md:text-base">
                         Yuk buat thread pertamamu!
                       </p>
-                      <button 
-                        onClick={() => router.push('/create')}
+                      <button
+                        onClick={() => router.push("/create")}
                         className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center gap-2 mx-auto"
                       >
                         <FaEdit className="w-4 h-4" />
@@ -78,7 +80,7 @@ const MyThreadPage = () => {
                 </>
               )}
             </div>
-            
+
             {myThreads && myThreads.length > 0 && !loading && (
               <div className="mt-8 pt-6 border-t border-gray-100">
                 <Pagination

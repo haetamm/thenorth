@@ -46,7 +46,7 @@ const SidebarComp = () => {
                   {menuItems
                     .filter(
                       (item) =>
-                        item.visible === true || item.visible(token, role)
+                        item.visible === true || item.visible(token, role),
                     )
                     .map(({ label, icon, link }) => (
                       <li key={label}>

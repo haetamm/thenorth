@@ -31,7 +31,7 @@ export const handleFormErrors = (error, setError = null) => {
           data.message
             ? data.message
             : "You are not authorized to access this resource"
-        } `
+        } `,
       );
       break;
     }
@@ -49,7 +49,7 @@ export const handleFormErrors = (error, setError = null) => {
     default: {
       if (status >= 500 && status < 600) {
         toast.error(
-          data.message || "An error occurred. Please try again later."
+          data.message || "An error occurred. Please try again later.",
         );
       }
       break;

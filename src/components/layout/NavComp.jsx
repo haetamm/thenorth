@@ -4,8 +4,7 @@ import useScroll from "@/hooks/useScroll";
 import ToggleSidebar from "./ToggleSidebar";
 import GuestNavbar from "./GuestNavbar";
 
-const NavComp = ({ children, guest }) => {
-  const [isOpenDropdown] = useState(false);
+const NavComp = ({ guest }) => {
   const { visible, transparent } = useScroll();
 
   return (
@@ -25,8 +24,6 @@ const NavComp = ({ children, guest }) => {
         </div>
         <ToggleSidebar />
       </div>
-
-      <div onClick={isOpenDropdown ? toggleDropdown : null}>{children}</div>
     </div>
   );
 };

@@ -43,7 +43,7 @@ const DropdownUser = () => {
   if (!token) return null;
 
   const items = dropdownItems(openModalLogout).filter(
-    (item) => !item.role || item.role === role
+    (item) => !item.role || item.role === role,
   );
 
   return (

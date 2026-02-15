@@ -1,4 +1,3 @@
-import { useState, useEffect } from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import useUserStore from "@/store/user";
@@ -6,15 +5,12 @@ import DropdownUser from "./DropdownUser";
 import { sidebarItems } from "../../../utils/links";
 import { IoMdCreate } from "react-icons/io";
 import { isActive } from "../../../utils/helper";
+import useHasMounted from "@/hooks/useHasMounted";
 
 const SideBarUser = () => {
   const { token } = useUserStore();
   const { pathname } = useRouter();
-  const [mounted, setMounted] = useState(false);
-
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  const mounted = useHasMounted();
 
   if (!mounted) return null;
 

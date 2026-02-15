@@ -26,8 +26,8 @@ const ButtonActivation = ({ deleted_at, id, username }) => {
         {loadingActivation
           ? "Loading"
           : deleted_at === null
-          ? "Deactivate"
-          : "Activate"}
+            ? "Deactivate"
+            : "Activate"}
       </button>
     </>
   );

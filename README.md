@@ -1,35 +1,69 @@
 # Project Nextjs | Tailwind
 
-Frontend => [disini](https://thenorth.vercel.app/)
-Backend => [disini](https://github.com/haetamm/thenorth-api)
+Frontend => [here](https://thenorth.vercel.app/)
+Backend => [here](https://github.com/haetamm/thenorth-api/tree/docker.setup)
 
-## project setup
+---
 
+## 📋 Project Setup
+
+### Prerequisites
+- Docker & Docker Compose installed
+- Node.js 22+ (if running locally without Docker)
+
+### 1. **Initial Setup**
+
+Clone the repository:
 ```sh
-npm install
+git clone <repository-url>
+cd thenorth
 ```
 
-run the development server:
+### 2. **Create Environment File**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
+Copy and edit the environment file:
+```sh
+cp .env.example .env
 ```
 
-run the mode production server:
-
-```bash
-npm run build
+Edit `.env` with your configuration:
+```env
+API_KEY_EDITOR= // api key tinymce/tinymce-react [text editor]
+NEXT_PUBLIC_API_BASE_URL=http://localhost:8000/api/v1 #API backend url
 ```
 
-```bash
-npm run start
+---
+
+## 🐳 Development Setup (With Docker) - RECOMMENDED
+
+### 1. **Start Docker Containers**
+
+Build and start the containers:
+```sh
+docker-compose -f docker-compose.dev.yml up --build
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
+
+## 🏗️ Production Setup (With Docker) - RECOMMENDED
+
+### 1. **Start Docker Containers**
+
+Build and start the containers:
+```sh
+docker-compose -f docker-compose.prod.yml up --build
+```
+
+---
+
+## **Access the Application**
+
+Open your browser and go to:
+- **Open**: [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+
+---
+
+**Happy Coding! 🚀**
 
 <br>
 

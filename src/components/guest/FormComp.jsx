@@ -13,7 +13,7 @@ const FormComp = ({
 }) => {
   const bgColor = useBackgroundChange(
     "bg-gradient-to-tr from-blue-300 to-slate-300",
-    400
+    400,
   );
 
   return (

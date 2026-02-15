@@ -1,7 +1,7 @@
 import axios from "axios";
 import Cookies from "js-cookie";
 
-const apiBaseUrl = "http://localhost:8000/api/v1/";
+const apiBaseUrl = process.env.NEXT_PUBLIC_API_BASE_URL;
 
 const axiosInstance = axios.create({
   baseURL: `${apiBaseUrl}`,
@@ -31,7 +31,7 @@ axiosInstance.interceptors.response.use(
     }
 
     throw error;
-  }
+  },
 );
 
 export default axiosInstance;

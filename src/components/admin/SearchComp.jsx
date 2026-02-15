@@ -26,7 +26,7 @@ const SearchComp = () => {
                 options.push(
                   <option key={i} value={i}>
                     {i}
-                  </option>
+                  </option>,
                 );
               }
               return options;

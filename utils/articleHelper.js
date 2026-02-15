@@ -31,7 +31,7 @@ export function getOverview(body) {
 
   const strippedTextWithoutLineBreaks = strippedText.replace(
     /(\r\n|\n|\r)/gm,
-    ""
+    "",
   );
 
   if (strippedTextWithoutLineBreaks.length >= 30) {

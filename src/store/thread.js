@@ -26,7 +26,7 @@ const useThreadStore = create((set) => ({
     set({ loading: true, error: null });
     try {
       const { data: response } = await axiosInstance.get(
-        `threads?page=${page}`
+        `threads?page=${page}`,
       );
       const { data: result } = response;
       const { data: threads, currentPage, totalCount, totalPages } = result;
@@ -42,7 +42,7 @@ const useThreadStore = create((set) => ({
     set({ loading: true, error: null });
     try {
       const { data: response } = await axiosInstance.get(
-        `threads/me?page=${page}`
+        `threads/me?page=${page}`,
       );
       const { data: result } = response;
       const { data: myThreads, currentPage, totalCount, totalPages } = result;
@@ -58,7 +58,7 @@ const useThreadStore = create((set) => ({
     set({ loading: true, error: null });
     try {
       const { data: response } = await axiosInstance.get(
-        `threads/likes?page=${page}`
+        `threads/likes?page=${page}`,
       );
       const { data: result } = response;
       const { data: myLikes, currentPage, totalCount, totalPages } = result;
@@ -83,11 +83,11 @@ const useThreadStore = create((set) => ({
             : state.thread,
 
         threads: state.threads.map((thread) =>
-          thread.id === thread_id ? { ...thread, like_count, liked } : thread
+          thread.id === thread_id ? { ...thread, like_count, liked } : thread,
         ),
 
         myThreads: state.myThreads.map((thread) =>
-          thread.id === thread_id ? { ...thread, like_count, liked } : thread
+          thread.id === thread_id ? { ...thread, like_count, liked } : thread,
         ),
 
         myLikes: liked
@@ -98,7 +98,6 @@ const useThreadStore = create((set) => ({
           : state.myLikes.filter((thread) => thread.id !== thread_id),
       }));
     } catch (error) {
-      console.log(error);
       handleFormErrors(error);
     }
   },
@@ -146,7 +145,7 @@ const useThreadStore = create((set) => ({
     try {
       const { data: response } = await axiosInstance.post(
         `comments/${threadId}`,
-        data
+        data,
       );
       const { data: comments } = response;
       set({ comments });
@@ -163,13 +162,13 @@ const useThreadStore = create((set) => ({
     set({ loadingComment: true, error: null });
     try {
       const { data: response } = await axiosInstance.delete(
-        `comments/${threadId}/${commentId}`
+        `comments/${threadId}/${commentId}`,
       );
       const { data: comments } = response;
       set({ comments });
       toast.success("komentar berhasil dihapus");
     } catch (error) {
-      handleFormErrors(error, setError);
+      handleFormErrors(error);
     } finally {
       set({ loadingComment: false });
     }

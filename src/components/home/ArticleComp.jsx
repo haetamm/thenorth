@@ -1,13 +1,13 @@
 import React from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { 
-  FaComment, 
-  FaHeart, 
-  FaRegHeart, 
+import {
+  FaComment,
+  FaHeart,
+  FaRegHeart,
   FaArrowRight,
   FaUserCircle,
-  FaCalendarAlt
+  FaCalendarAlt,
 } from "react-icons/fa";
 import {
   formatDate,
@@ -19,7 +19,7 @@ import useUserStore from "@/store/user";
 
 const ButtonLike = ({ liked, like_count, id, size = "sm" }) => {
   const sizeClass = size === "sm" ? "w-4 h-4" : "w-5 h-5";
-  
+
   return (
     <button className="flex items-center gap-1 text-gray-600 hover:text-red-500 transition-colors duration-200">
       {liked ? (
@@ -36,14 +36,15 @@ const ArticleComp = ({ threads }) => {
   const { token } = useUserStore();
 
   return (
-    <div className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ${token ? 'xl:rid-cols-3' : 'xl:grid-cols-4'} gap-6 w-full`}>
+    <div
+      className={`grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 ${token ? "xl:rid-cols-3" : "xl:grid-cols-4"} gap-6 w-full`}
+    >
       {threads.length > 0 &&
         threads.map((post, index) => (
-          <div 
+          <div
             key={index}
             className="bg-white rounded-xl shadow-lg border border-gray-200 hover:shadow-xl transition-all duration-300 hover:border-red-300 group flex flex-col h-full"
           >
-
             <div className="relative h-48 w-full overflow-hidden rounded-t-xl bg-gray-200">
               <Image
                 priority
@@ -53,7 +54,7 @@ const ArticleComp = ({ threads }) => {
                 className="object-cover transition-transform duration-500 group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-colors duration-300" />
-              
+
               <div className="absolute top-3 left-3">
                 <span className="px-3 py-1 bg-white/95 rounded-full text-xs font-bold text-gray-800 shadow-sm">
                   Post
@@ -78,7 +79,10 @@ const ArticleComp = ({ threads }) => {
                   </p>
                   <div className="flex items-center gap-1 text-xs text-gray-500">
                     <FaCalendarAlt className="w-3 h-3" />
-                    <span className="cursor-help" title={`${formatDate(post?.created_at)}, ${isoToWIB(post?.created_at)}`}>
+                    <span
+                      className="cursor-help"
+                      title={`${formatDate(post?.created_at)}, ${isoToWIB(post?.created_at)}`}
+                    >
                       {new Date(post?.created_at).diffforHumans()}
                     </span>
                   </div>
@@ -93,7 +97,9 @@ const ArticleComp = ({ threads }) => {
                 <div className="flex items-center gap-4">
                   <div className="flex items-center gap-2 text-gray-600">
                     <FaComment className="w-4 h-4" />
-                    <span className="text-sm font-medium">{post?.comment_count || 0}</span>
+                    <span className="text-sm font-medium">
+                      {post?.comment_count || 0}
+                    </span>
                   </div>
                   <ButtonLike
                     liked={post?.liked}

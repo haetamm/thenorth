@@ -37,7 +37,7 @@ const MyLikeThreadPage = () => {
           <div className="mb-6">
             <NavThreadPage />
           </div>
-          
+
           <div className="bg-white shadow-sm border border-gray-200 rounded-xl p-6">
             <div className="mb-8 text-center border-b border-gray-100 pb-6">
               <h1 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3 flex items-center justify-center gap-3">
@@ -68,15 +68,15 @@ const MyLikeThreadPage = () => {
                         Like thread yang menarik untuk menyimpannya di sini
                       </p>
                       <div className="flex flex-col sm:flex-row gap-3 justify-center">
-                        <button 
-                          onClick={() => router.push('/home')}
+                        <button
+                          onClick={() => router.push("/home")}
                           className="bg-gradient-to-r from-red-500 to-orange-500 hover:from-red-600 hover:to-orange-600 text-white px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center gap-2"
                         >
                           <FaSearch className="w-4 h-4" />
                           Jelajahi Thread
                         </button>
-                        <button 
-                          onClick={() => router.push('/create')}
+                        <button
+                          onClick={() => router.push("/create")}
                           className="border border-gray-300 hover:border-red-300 text-gray-700 hover:text-red-600 px-6 py-3 rounded-lg font-semibold transition-all duration-300 transform hover:-translate-y-1 hover:shadow-lg flex items-center gap-2"
                         >
                           <FaPlus className="w-4 h-4" />
@@ -88,7 +88,7 @@ const MyLikeThreadPage = () => {
                 </>
               )}
             </div>
-            
+
             {myLikes && myLikes.length > 0 && !loading && (
               <div className="mt-8 pt-6 border-t border-gray-100">
                 <Pagination

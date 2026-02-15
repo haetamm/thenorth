@@ -1,6 +1,7 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: "standalone",
   images: {
     remotePatterns: [
       // Untuk Flaticon (dari domains lama)
@@ -10,7 +11,7 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
-      
+
       // Untuk fakeimg.pl (tetepin, tapi ganti src di code kalau down)
       {
         protocol: "http",
